@@ -1,0 +1,46 @@
+[
+  {
+    "run": 0,
+    "warmup": true,
+    "model": "qwen3:8b",
+    "generated_tokens": 2316,
+    "tokens_per_second": 105.96559293537092,
+    "total_seconds": 22.0700568,
+    "load_seconds": 0.1559469,
+    "prompt_tokens": 30,
+    "timestamp": "2026-10-31T20:53:29.3046935Z"
+  },
+  {
+    "run": 1,
+    "warmup": false,
+    "model": "qwen3:8b",
+    "generated_tokens": 4096,
+    "tokens_per_second": 103.79166984680694,
+    "total_seconds": 39.7378244,
+    "load_seconds": 0.1616534,
+    "prompt_tokens": 30,
+    "timestamp": "2026-10-31T20:54:09.0560600Z"
+  },
+  {
+    "run": 2,
+    "warmup": false,
+    "model": "qwen3:8b",
+    "generated_tokens": 2316,
+    "tokens_per_second": 107.2777086370784,
+    "total_seconds": 21.8235105,
+    "load_seconds": 0.1569062,
+    "prompt_tokens": 30,
+    "timestamp": "2026-10-31T20:54:30.8858828Z"
+  },
+  {
+    "run": 3,
+    "warmup": false,
+    "model": "qwen3:8b",
+    "generated_tokens": 4096,
+    "tokens_per_second": 102.42233575086888,
+    "total_seconds": 40.1652213,
+    "load_seconds": 0.1585741,
+    "prompt_tokens": 30,
+    "timestamp": "2026-10-31T20:55:11.0611880Z"
+  }
+]
