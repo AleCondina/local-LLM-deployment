@@ -3,9 +3,12 @@
 A documented deployment of native Windows Ollama, GPU inference, Docker-hosted
 Open WebUI, and private HTTPS access through Tailscale Serve.
 
-**Status: package prepared; isolated deployment and fresh-machine validation pending.**
-The original system works according to its owner. This package has not yet run on
-Windows. Do not describe it as a verified one-click installer.
+**Status: core isolated-deployment checks passed on the reference Windows host.**
+On October 31, 2026, the owner confirmed API checks, browser generation, absence of
+a signup option, and chat persistence after container recreation. The test reuses
+an existing Ollama service. GPU verification for this run, remote-access testing,
+reboot testing of the new deployment, and fresh-machine validation remain pending.
+See [the validation record](docs/validation.md).
 
 ## Contribution
 
