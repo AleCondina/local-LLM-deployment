@@ -6,8 +6,9 @@ Open WebUI, and private HTTPS access through Tailscale Serve.
 **Status: core isolated-deployment checks passed on the reference Windows host.**
 On October 31, 2026, the owner confirmed API checks, browser generation, absence of
 a signup option, and chat persistence after container recreation. The test reuses
-an existing Ollama service. GPU verification for this run, remote-access testing,
-reboot testing of the new deployment, and fresh-machine validation remain pending.
+an existing Ollama service. Owner-supplied `ollama ps` confirms 100% GPU placement
+for Qwen3:8b with a 4,096-token context. Remote-access testing, reboot testing of
+the new deployment, and fresh-machine validation remain pending.
 See [the validation record](docs/validation.md).
 
 ## Contribution
