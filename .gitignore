@@ -1,0 +1,6 @@
+.env
+*.log
+results/
+*.zip
+*.db
+*.sqlite*

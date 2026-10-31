@@ -1,0 +1,20 @@
+name: local-ai-test
+services:
+  webui:
+    image: ghcr.io/open-webui/open-webui@sha256:a26effeb220e132482bf7e0560b3404843e7bc40d23051144e062960df8df6b0
+    ports:
+      - "127.0.0.1:${WEBUI_PORT:-8089}:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      OLLAMA_BASE_URLS: http://host.docker.internal:11434
+      WEBUI_AUTH: "true"
+      ENABLE_SIGNUP: "${ENABLE_SIGNUP:-false}"
+      ENABLE_PERSISTENT_CONFIG: "false"
+      ENABLE_OPENAI_API: "false"
+    volumes:
+      - webui-data:/app/backend/data
+    restart: always
+volumes:
+  webui-data:
