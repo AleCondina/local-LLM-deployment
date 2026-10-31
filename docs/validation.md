@@ -22,7 +22,7 @@ do not establish that the new package works on a fresh machine.
 | Host API | qwen3:8b listed | Passed via successful script run, including generation |
 | Container API | Host Ollama reachable from container | Passed: HTTP 200 |
 | Browser generation | Complete response through WebUI | Passed, owner reported |
-| GPU | Ollama process/offload visible during request | Pending |
+| GPU | Ollama reports model on GPU | Passed: owner supplied `ollama ps`, 100% GPU |
 | Persistence | Test chat survives compose down/up | Passed, owner reported |
 | Private HTTPS | Authorized client can log in and generate | Pending |
 | Restrictions | Unintended routes cannot access UI/API | Pending |
@@ -34,3 +34,12 @@ Record date, hardware, versions, image digest, model ID, commands and observed
 results. Keep failed tests and corrective steps. Do not publish passwords or chat
 content. Do not test failure recovery against a shared active session without
 coordinating downtime. A one-machine isolated test is not fresh-machine validation.
+
+## GPU evidence (October 31, 2026)
+
+Owner-supplied `ollama ps`: qwen3:8b, ID 500a1f067a9f, size 5.6 GB,
+PROCESSOR 100% GPU, active context 4096. This confirms full GPU placement reported
+by Ollama, not a throughput measurement. The accompanying NVIDIA-SMI screenshot
+shows RTX 5070, driver 610.88, 96% device utilization and 8,175 / 12,227 MiB
+VRAM usage. Those device-wide figures include other applications and must not be
+attributed solely to Ollama. Private paths and unrelated process listings are omitted.
