@@ -1,7 +1,13 @@
 # Validation record
 
-Package status: static review only. Windows, Docker Desktop, GPU and Tailscale tests
-must be completed on the target machine. No runtime passes are claimed here.
+Package status: partial runtime validation on the reference Windows host, reported
+by Alessandro on October 31, 2026. The isolated WebUI uses the existing Ollama
+service; this is not validation of a fresh Windows/service installation.
+
+Evidence: owner supplied health status True and container-to-Ollama HTTP 200,
+confirmed Test-Setup.ps1 -Generate finished successfully, confirmed browser chat
+and absence of a signup option, and confirmed the conversation survived
+`docker compose down` followed by `Start-WebUI.ps1`.
 
 The owner verified the original installation generates responses, requires login,
 has signup disabled and becomes available after Windows sign-in. These observations
@@ -9,15 +15,15 @@ do not establish that the new package works on a fresh machine.
 
 | Test | Expected | Package result |
 |---|---|---|
-| Compose config | Valid rendered configuration | Pending target test |
-| Fresh volume | Administrator can be created locally | Pending |
-| Lock signup | Anonymous signup unavailable after normal start | Pending |
+| Compose config | Valid rendered configuration | Passed via successful script run |
+| Fresh volume | Administrator can be created locally | Working browser session reported; bootstrap not separately recorded |
+| Lock signup | Anonymous signup unavailable after normal start | Signup option absent, owner reported; API-level denial not tested |
 | Authentication | Anonymous chat unavailable | Pending |
-| Host API | qwen3:8b listed | Pending |
-| Container API | Host Ollama reachable from container | Pending |
-| Browser generation | Complete response through WebUI | Pending |
+| Host API | qwen3:8b listed | Passed via successful script run, including generation |
+| Container API | Host Ollama reachable from container | Passed: HTTP 200 |
+| Browser generation | Complete response through WebUI | Passed, owner reported |
 | GPU | Ollama process/offload visible during request | Pending |
-| Persistence | Test chat survives compose down/up | Pending |
+| Persistence | Test chat survives compose down/up | Passed, owner reported |
 | Private HTTPS | Authorized client can log in and generate | Pending |
 | Restrictions | Unintended routes cannot access UI/API | Pending |
 | Restart | Works after Windows sign-in | Pending |
