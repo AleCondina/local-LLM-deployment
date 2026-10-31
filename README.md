@@ -129,6 +129,13 @@ loading and prompt processing. Total duration is reported separately. Record GPU
 use with `ollama ps` and `nvidia-smi` during inference. A response alone does not
 prove GPU execution.
 
+Owner-reported package benchmark, October 31, 2026: **104.50 generation tokens/s**
+(arithmetic mean of three measured runs, excluding warmup), range
+102.42–107.28 tokens/s on Qwen3:8b and RTX 5070. Two runs reached the
+4,096-token output limit; answer completion and quality were not recorded.
+See [results and methodology](docs/validation.md#benchmark-evidence-october-31-2026)
+for the raw data, per-run timings and limitations.
+
 Historical owner-provided result, July 13, 2026: Qwen3:8b on RTX 5070 generated
 3,052 tokens at 105.14 tokens/s, with total request duration 31.59 s. This was one
 run with incomplete version/context/warmup metadata. It is not a guaranteed speed
